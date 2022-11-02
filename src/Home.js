@@ -1,19 +1,20 @@
-import React, { useContext } from 'react'
-//import { AppContext } from './context'
-import { useGlobalContext } from './context'
+import React from 'react'
+import Search from './Search'
+ import Movie from './Movie'
 
 const Home = () => {
-  //const name = useContext(AppContext)
-  const name= useGlobalContext();
   return (
-    <div>
-      <h1>My Home Page</h1>
-      <p>{name}</p>
-    </div>
+  <>
+    <Search/>
+    <Movie/>
+  </>
   )
 }
 
 export default Home
 
+
+
 //https://www.omdbapi.com/
 //Here is your key: 82dd2684
+//http://img.omdbapi.com/?apikey=82dd2684&s=titanic
