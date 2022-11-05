@@ -41,8 +41,17 @@ const AppProvider = ({ children }) => {
     }
     //will run once when page load
     useEffect(() => {
+        //Debouncing to set a timeout to prevent api call for each key we type
+        //clear previous query and take only the last one
+        //to prevent hit to the server for each letter we type
+         let timeOut = setTimeout(()=> {
+            getMovies(`${API_URL}&s=${query}`);
+        }, 800);
+
+         return () => clearTimeout(timeOut);
+
         // getMovies(API_URL);
-        getMovies(`${API_URL}&s=${query}`);
+       
         //when query change run useeffect  [query]
     }, [query]);
     
