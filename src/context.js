@@ -4,7 +4,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 //const API_URL = `http://www.omdbapi.com/?apikey=82dd2684&s=titanic`;
-const API_URL = `http://www.omdbapi.com/?apikey=82dd2684`;
+export const API_URL = `http://www.omdbapi.com/?apikey=82dd2684`;
 //const api = process.env.REACT_APP_API_KEY;
 //console.log(api)
 
@@ -21,6 +21,7 @@ const AppProvider = ({ children }) => {
     const [query, setQuery] = useState("titanic");
 
     const getMovies =  async(url) => {
+        setIsLoading(true);
         try {
             const res = await fetch(url);
             const data = await res.json();
@@ -31,7 +32,7 @@ const AppProvider = ({ children }) => {
             } else {
                 setIsError({
                     show: true,
-                    msg: data.error
+                    msg: data.Error
                 })
             }
     
