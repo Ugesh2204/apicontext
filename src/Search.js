@@ -1,9 +1,9 @@
 import React from 'react'
 import { useGlobalContext } from './context'
 
+
 const Search = () => {
   const { query, setQuery, isError} = useGlobalContext();
- 
   return (
   <>
    <section className='search-section'>
@@ -19,8 +19,15 @@ const Search = () => {
         <p>{isError.show && isError.msg}</p>
       </div>
     </form>
+
   </section>
+
+
+
+
   </>
+
+
   )
 }
 

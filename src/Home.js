@@ -1,12 +1,14 @@
 import React from 'react'
 import Search from './Search'
  import Movies from './Movies'
+ import SearchSuggestion from './SearchSuggestion'
 
 const Home = () => {
   return (
   <>
-    <Search/>
-    <Movies/>
+    {/* <Search/> */}
+    <SearchSuggestion placeholder='Enter a Movie name'/>
+    {/* <Movies/> */}
   </>
   )
 }
